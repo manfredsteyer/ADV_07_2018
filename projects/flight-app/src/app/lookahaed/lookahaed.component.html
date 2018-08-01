@@ -1,0 +1,24 @@
+<div class="card">
+  <div class="header">
+    <h2 class="title">Lookahead</h2>
+  </div>
+  <div class="content">
+
+    <div class="form-group">
+      <input class="form-control" [formControl]="control">
+      Online: {{ online$ | async }}, Loading: {{ loading }}
+    </div>
+
+
+    <table class="table table-striped">
+      <tr *ngFor="let f of flights$ | async">
+        <td>{{f.id}}</td>
+        <td>{{f.from}}</td>
+        <td>{{f.to}}</td>
+        <td>{{f.date | date:'dd.MM.yyyy HH:mm'}}</td>
+      </tr>
+    </table>
+
+  </div>
+
+</div>
